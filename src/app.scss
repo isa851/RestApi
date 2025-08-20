@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  background: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+
+}
+
+.users {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.user-card {
+  background: black;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px red;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px fuchsia;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+
+  &__username {
+    font-size: 14px;
+    color: gray;
+  }
+
+  &__email {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #2980b9;
+  }
+}
