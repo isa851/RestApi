@@ -4,7 +4,7 @@ import "./app.scss";
 
 function App() {
   const users = useUsersStore((state) => state.users);
-
+  const loading = useUsersStore((state) => state.loading);
   const fetchUsers = useUsersStore((state) => state.fetchUsers);
 
   useEffect(() => {
@@ -13,21 +13,24 @@ function App() {
 
   return (
     <div className="app">
-   
-
-
-
-      <div className="users">
-        {users.map((u) => (
-          <div key={u.id} className="user-card">
-            <h2 className="user-card__name">
-              {u.id}. {u.name}
-            </h2>
-            <p className="user-card__username">@{u.username}</p>
-            <p className="user-card__email">{u.email}</p>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <div className="app__loader">
+          <div className="spinner"></div>
+          <p>ПОДОЖДИТЕ НЕМНОГО, СЕРВЕР ГРУЗИТ...</p>
+        </div>
+      ) : (
+        <div className="users">
+          {users.map((u) => (
+            <div key={u.id} className="user-card">
+              <h2 className="user-card__name">
+                {u.id}. {u.name}
+              </h2>
+              <p className="user-card__username">@{u.username}</p>
+              <p className="user-card__email">{u.email}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
