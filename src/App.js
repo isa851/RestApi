@@ -16,7 +16,7 @@ function App() {
       {loading ? (
         <div className="app__loader">
           <div className="spinner"></div>
-          <p>ПОДОЖДИТЕ НЕМНОГО, СЕРВЕР ГРУЗИТ...</p>
+          <p>ПОДОЖДИТЕ НЕМНОГО, СЕРВЕР ГРУЗИТ !!!!!!!</p>
         </div>
       ) : (
         <div className="users">
